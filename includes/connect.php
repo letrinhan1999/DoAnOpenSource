@@ -11,7 +11,7 @@ try {
     // Connect on Sever:
   //$conn = new PDO("mysql:host=$servername;dbname=id11075134_motorcyclestore", $usernameSever, $passwordSever);
 
-  $conn = new PDO("mysql:host=$servername;dbname=motorr", $username, $password);
+  $conn = new PDO("mysql:host=$servername;dbname=motor", $username, $password);
   // set the PDO error mode to exception
   $conn -> query('set names utf8');
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

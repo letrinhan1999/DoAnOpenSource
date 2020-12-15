@@ -150,7 +150,7 @@
     <input type="checkbox" id="check">
     <header>
         <?php
-            include "./includes/admin/header_admin.php";
+            include "./includes/admin/header_ad.php";
         ?>
     </header>
 
