@@ -70,9 +70,15 @@
     </div>
     
     <?php
-    $sql = "select * from `quantri`";
-    $stmt = $conn -> prepare($sql);
-    $stmt->execute();
+    $para=array();
+    $sql1 = 'SELECT * FROM `order` INNER JOIN chitiet_donhang ON `order`.ma_donhang = chitiet_donhang.ma_donhang';
+    if(isset($_GET['madh'])){
+        $sql = "select * from `order` where ma_donhang = ?";
+        $para[]=$_GET['madh'];
+    }else
+        $sql = "select * from `order`";
+    $stmt=$conn->prepare($sql);
+    $stmt->execute($para);
 
     ?>
     
@@ -82,7 +88,7 @@
             <div class="col-md-12 col-sm-6 mt-1">
                 <div class="card">
                     <div class="card-header">
-                        QUẢN LÝ TÀI KHOẢN ADMIN
+                        QUẢN LÝ ĐƠN HÀNG
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -97,14 +103,16 @@
                             </div>
                         </div>
                         <hr>
-                        <h3 class="card-title">Danh Sách Tài Khoản Admin</h3>
-                        <h5>Chức vụ: 1. Admin System, 2. </h5>
+                        <h5 class="card-title"><a href="viewOrder_admin.php">Danh Sách Đơn Hàng</a></h5>
                             <table class="table table-hover table-sm table-responsive-lg">
                                 <thead>
                                 <tr>
+                                    <th scope="col">Mã đơn hàng</th>
                                     <th scope="col">Họ và tên</th>
-                                    <th scope="col">Username</th>
-                                    <th scope="col">Chức vụ</th>
+                                    <th scope="col">Số điện thoại</th>
+                                    <th scope="col">Địa chỉ</th>
+                                    <th scope="col">Ghi chú</th>
+                                    <th scope="col">Tổng</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -112,9 +120,13 @@
                                     while($data = $stmt->fetch(PDO::FETCH_ASSOC)){
                                 ?>
                                     <tr>
-                                        <th scope="row"><?= $data['hoten'] ?></th>
-                                        <td><?= $data['username'] ?></td>
-                                        <td><?= $data['quyen'] ?></td>
+                                        <td scope="row"><?php echo $data['ma_donhang'] ?></td>
+                                        <td><?= $data['ten'] ?></td>
+                                        <td><?= $data['sdt'] ?></td>
+                                        <td><?= $data['diachi'] ?></td>
+                                        <td><?= $data['ghichu'] ?></td>
+                                        <td><?= number_format($data['tongcong']) ?> VND</td>
+                                        <td><a href="viewDetail_admin.php?madh=<?= $data['ma_donhang'] ?>">Xem chi tiết đơn hàng</a></td>
                                         <td class="column-verticallineMiddle form-inline">                                           
                                             <form action="#" method="POST">
                                                 <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
