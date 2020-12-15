@@ -145,7 +145,7 @@
     </div>
 
     <?php
-        include('./includes/script.php');
+        include('./script.php');
     ?>
 </body>
 </html>
