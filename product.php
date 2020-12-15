@@ -73,7 +73,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						while ($xe = $stmt->fetch(PDO::FETCH_ASSOC)) {
 						
 					?>
-					<div class="giay_col">
+					<div class="col-md-4 giay_col">
 						<div class="card">
 							<a href="single.php?maxe=<?php echo $xe['maxe']; ?>"><img
 									class="img-responsive chain moto_image"

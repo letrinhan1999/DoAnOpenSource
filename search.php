@@ -91,7 +91,7 @@
             echo '</script>';
         }
         if(isset($_GET['submitTim'])){
-            $sql="SELECT * FROM xe WHERE tenxe LIKE '%$searrch1%'";
+            $sql="SELECT * FROM xe WHERE tenxe LIKE '%$search1%'";
             //$sql .= ' limit '.($trang-1)*$xe1trang.','.$xe1trang;
             $paraTim[]=$search1;
             $stmt=$conn->prepare($sql);
