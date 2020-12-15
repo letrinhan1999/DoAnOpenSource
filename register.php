@@ -65,7 +65,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="clearfix"> </div>
 			<div class="register-but">
 				<form>
-					<input type="submit" value="submit">
+					<input class="sub" type="submit" value="submit">
 					<div class="clearfix"> </div>
 				</form>
 			</div>
