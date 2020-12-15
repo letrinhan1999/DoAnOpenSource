@@ -8,8 +8,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="css/loginAdmin.css" rel="stylesheet" type="text/css" media="all" />
+    <title>Cua Hang Xe May</title>
+    <!-- <link href="csss/loginAdmin.css" rel="stylesheet" type="text/css" media="all" /> -->
     
 </head>
 
@@ -21,7 +21,7 @@
             <p>User name</p>
             <input id="username" name="txtUsername" class="username" type="text" placeholder="Enter Username">
             <p>Password</p>
-            <input id="password" name="txtPassword" class="password" type="password" placeholder="Enter Password">
+            <input id="password" name="txtPassword" class="password"  placeholder="Enter Password">
             <a href="index.php"><p>Quay về trang chủ</p></a><br>
             <input type="submit" name="submitDNhap" value="Login">
         </form>
@@ -33,8 +33,8 @@
         include './includes/connect.php';
          
         //Lấy dữ liệu nhập vào
-        $username = isset($_POST['txtUsername'])?$_POST['txtUsername']:'';
-        $password = isset($_POST['txtPassword'])?$_POST['txtPassword']:'';
+       /*  $username = isset($_POST['txtUsername'])?$_POST['txtUsername']:'';
+        $password = isset($_POST['txtPassword'])?$_POST['txtPassword']:''; */
         $para=array();
         $para[]=$username;
 
@@ -78,7 +78,9 @@
 		echo '</script>';
         $_SESSION['username'] = $username;
         //echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='#'>Về trang chủ</a>";
-        header("location: admin.php");
+        //header("location: admin.php");
+        echo '<script type="text/javascript">
+           window.location = "addPro_ad.php" </script>';
         die();
     }
 ?>

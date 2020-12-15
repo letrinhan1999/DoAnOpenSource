@@ -5,73 +5,70 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 
-<!-- Kết nối DB -->
-<?php
-	include "./includes/connect.php";
-?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-	
 	<?php
-		include "./includes/head.php";
-	?>
-
+        include './includes/client/head.php';
+    ?>
 </head>
 
 <body>
-	<!-- HEADER -->
-	<div class="header">
-		<?php
+	<!--header-->
+	<?php
 		include "./includes/header.php";
-		?>
-	</div>
+	if(isset($_POST['submitDKy'])){
+		$username = isset($_POST['username'])?$_POST['username']:'';
+		$matkhau = isset($_POST['password'])?$_POST['password']:'';
+		$hoten = isset($_POST['txtTen'])?$_POST['txtTen']:'';
+		$mkhau = md5($matkhau);
+		$data=[	$username,
+			$mkhau,
+			$hoten,
+		];
+		$sql = "INSERT INTO quantri (username, matkhau, hoten) VALUES (?,	?,	?)";
+		$stmt = $conn->prepare($sql);
+		$stmt->execute($data);
+		echo '<script language="javascript">'; 
+		echo 'alert("Đăng ký thành công !!!") ';
+		echo '</script>';
+		echo '<script type="text/javascript">
+           window.location = "loginAdmin.php" </script>';
+	}
 
-	<!-- CONTENT -->
+
+	?>
+
+
+	<!--CONTENT-->
 	<div class="container">
 
 		<div class="register">
-			<form>
+			<form action="register.php" method="POST" enctype="multipart/form-data">
 				<div class="  register-top-grid">
 					<h3>PERSONAL INFORMATION</h3>
 					<div class="mation">
-						<span>First Name<label>*</label></span>
-						<input type="text">
+						<span> Userame <label>*</label></span>
+						<input type="text" name="username" value="<?=isset($_POST['username'])?$_POST['username']:''; ?>">
 
-						<span>Last Name<label>*</label></span>
-						<input type="text">
+						<span> Mật Khẩu <label>*</label></span>
+						<input type="password" name="password" value="">
 
-						<span>Email Address<label>*</label></span>
-						<input type="text">
+						<span> Họ và tên <label>*</label></span>
+						<input type="text" name="txtTen" value="<?=isset($_POST['txtTen1'])?$_POST['txtTen']:''; ?>">
 					</div>
 					<div class="clearfix"> </div>
-					<a class="news-letter" href="#">
-						<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign
-							Up</label>
-					</a>
+
 				</div>
-				<div class="  register-bottom-grid">
-					<h3>LOGIN INFORMATION</h3>
-					<div class="mation">
-						<span>Password<label>*</label></span>
-						<input type="text">
-						<span>Confirm Password<label>*</label></span>
-						<input type="text">
-					</div>
-				</div>
+				<input type="submit" name="submitDKy" value="Đăng Ký">
 			</form>
 			<div class="clearfix"> </div>
-			<div class="register-but">
-				<form>
-					<input class="sub" type="submit" value="submit">
-					<div class="clearfix"> </div>
-				</form>
-			</div>
 		</div>
 
-		<!-- Menu trái -->
+
+		<!-- Menu Left -->
 		<div class="sub-cate">
 			<?php
 				include "./includes/menuleft.php";
@@ -79,12 +76,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 
-	<!-- FOOTER -->
-	<div class="footer">
-		<?php
-			include "./includes/footer.php";
-		?>
-	</div>
+
+	<hr>
+	<!--FOOTER-->
+	<?php
+		include "./includes/footer.php";
+	?>
 </body>
 
 </html>

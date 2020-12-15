@@ -187,7 +187,7 @@ if(isset($_POST['submitAddType'])){
         echo "Phải Post dữ liệu";
         die;
     }
-    $maloai = isset($_POST['txtMaloai'])?$_POST['txtMaloai']:'';
+    /* $maloai = isset($_POST['txtMaloai'])?$_POST['txtMaloai']:''; */
     $tenloai = isset($_POST['txtName'])?$_POST['txtName']:'';
     $data = [
         $maloai,
@@ -201,7 +201,8 @@ if(isset($_POST['submitAddType'])){
     echo '<script language="javascript">'; 
 	echo 'alert("Đã Thêm Thành Công !!! ")'; 
 	echo '</script>';
-
+    echo '<script type="text/javascript">
+    window.location = "addType_ad.php" </script>';
 
     //header('location:addType_admin.php');
 }

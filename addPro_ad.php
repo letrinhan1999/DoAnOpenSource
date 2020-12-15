@@ -144,7 +144,7 @@
                                                 <input type="text" placeholder="Nhập giá xe" name="txtCost" value="<?php echo isset($_POST['txtCost'])?$_POST['txtCost']:''  ?>">
                                                 <p>Mô tả</p>
                                                 <textarea name="txtDetail" id="detail" cols="70" rows="8" placeholder="Nhập mô tả xe">
-                                                    <?php echo isset($_POST['txtDetail'])?$_POST['txtDetail']:''  ?>
+                                                    <?php /* echo isset($_POST['txtDetail'])?$_POST['txtDetail']:'' */  ?>
                                                 </textarea>
                                             </div>
                                         </div>
@@ -161,7 +161,7 @@
 
 
     <?php
-        include('./script.php');
+        include('./scriptt.php');
     ?>
    
 </body>
