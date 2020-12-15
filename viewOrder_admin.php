@@ -69,18 +69,27 @@
         ?>
     </div>
     
-    
+    <?php
+    $para=array();
+    $sql1 = 'SELECT * FROM `order` INNER JOIN chitiet_donhang ON `order`.ma_donhang = chitiet_donhang.ma_donhang';
+    if(isset($_GET['madh'])){
+        $sql = "select * from `order` where ma_donhang = ?";
+        $para[]=$_GET['madh'];
+    }else
+        $sql = "select * from `order`";
+    $stmt=$conn->prepare($sql);
+    $stmt->execute($para);
+
+    ?>
     
     <div class="content">
         
         <div class="row table_content">
             <div class="col-md-12 col-sm-6 mt-1">
                 <div class="card">
-                    
-                </div>
-                <div class="card-header">
-                        QUẢN LÝ HÓA ĐƠN
-                    
+                    <div class="card-header">
+                        QUẢN LÝ ĐƠN HÀNG
+                    </div>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-8">
@@ -94,7 +103,7 @@
                             </div>
                         </div>
                         <hr>
-                        <h5 class="card-title">Danh Sách Đơn Hàng</h5>
+                        <h5 class="card-title"><a href="viewOrder_admin.php">Danh Sách Đơn Hàng</a></h5>
                             <table class="table table-hover table-sm table-responsive-lg">
                                 <thead>
                                 <tr>
@@ -108,16 +117,28 @@
                                 </thead>
                                 <tbody>
                                 <?php
-                                    
+                                    while($data = $stmt->fetch(PDO::FETCH_ASSOC)){
                                 ?>
                                     <tr>
-                                        
+                                        <td scope="row"><?php echo $data['ma_donhang'] ?></td>
+                                        <td><?= $data['ten'] ?></td>
+                                        <td><?= $data['sdt'] ?></td>
+                                        <td><?= $data['diachi'] ?></td>
+                                        <td><?= $data['ghichu'] ?></td>
+                                        <td><?= number_format($data['tongcong']) ?> VND</td>
+                                        <td><a href="viewDetail_admin.php?madh=<?= $data['ma_donhang'] ?>">Xem chi tiết đơn hàng</a></td>
+                                        <td class="column-verticallineMiddle form-inline">                                           
+                                            <form action="#" method="POST">
+                                                <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                            </form>
+                                        </td>
                                     </tr>
-                                
+                                <?php } ?>
                                 </tbody>
                             </table>
 
                     </div>
+                </div>
             </div>
         </div>
 
