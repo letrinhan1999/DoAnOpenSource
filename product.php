@@ -1,5 +1,7 @@
 <?php
 	include "./includes/connect.php";
+	$stm = $conn->query('SELECT COUNT(*) as tong FROM xe');
+	$tongxe = $stm->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <!--A Design by W3layouts 
@@ -41,7 +43,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class=" w_content">
 				<div class="women">
 					<a href="#">
-						<h4>Enthecwear - <span>4449 itemms</span> </h4>
+						<h4>Enthecwear - <span><?= $tongxe['tong'] ?> itemms</span> </h4>
 					</a>
 					<ul class="w_nav">
 						<li>Sort : </li>

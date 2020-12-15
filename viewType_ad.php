@@ -126,10 +126,6 @@
                         <th>Mã loại</th>
                         <th>Tên Loại</th>
                     </tr>
-                    <tr>
-                        <th>Mã loại</th>
-                        <th>Tên Loại</th>
-                    </tr>
                 <?php
                     while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 ?>

@@ -80,7 +80,7 @@
         //echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='#'>Về trang chủ</a>";
         //header("location: admin.php");
         echo '<script type="text/javascript">
-           window.location = "addPro_ad.php" </script>';
+           window.location = "admin.php" </script>';
         die();
     }
 ?>

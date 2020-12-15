@@ -90,11 +90,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="grid images_3_of_2">
 					<ul id="etalage">
 						<li>
-							<a href="optionallink.html">
-								<img class="etalage_thumb_image" src="images/pro_img/<?php echo explode(',',$xe['hinh'])[0]; ?>" class="img-responsive" />
-								<img class="etalage_source_image" src="images/pro_img/<?php echo explode(',',$xe['hinh'])[0]; ?>" class="img-responsive"
-									title="" />
-							</a>
+							<img class="etalage_thumb_image" src="images/pro_img/<?php echo explode(',',$xe['hinh'])[0]; ?>" class="img-responsive" />
+							<img class="etalage_source_image" src="images/pro_img/<?php echo explode(',',$xe['hinh'])[0]; ?>" class="img-responsive" title="" />
 						</li>
 						<li>
 							<img class="etalage_thumb_image" src="images/lay_img/<?php echo explode(',',$xe['hinh'])[1]; ?>" class="img-responsive" />
@@ -104,10 +101,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<img class="etalage_thumb_image" src="images/lay_img/<?php echo explode(',',$xe['hinh'])[2]; ?>" class="img-responsive" />
 							<img class="etalage_source_image" src="images/lay_img/<?php echo explode(',',$xe['hinh'])[2]; ?>" class="img-responsive" />
 						</li>
-						<li>
+						<!-- <li>
 							<img class="etalage_thumb_image" src="images/lay_img/<?php echo explode(',',$xe['hinh'])[3]; ?>" class="img-responsive" />
 							<img class="etalage_source_image" src="images/lay_img/<?php echo explode(',',$xe['hinh'])[3]; ?>" class="img-responsive" />
-						</li>
+						</li> -->
 					</ul>
 					<div class="clearfix"> </div>
 				</div>

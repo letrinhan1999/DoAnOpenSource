@@ -158,34 +158,44 @@
     <div class="sidebar">
         <?php
             include "./includes/admin/menuleft_ad.php";
+            $stm = $conn->query('SELECT COUNT(*) as tong FROM quantri');
+            $ad = $stm->fetch(PDO::FETCH_ASSOC);
+            $stm = $conn->query('SELECT COUNT(*) as tong FROM loai');
+            $loai = $stm->fetch(PDO::FETCH_ASSOC);
+            $stm = $conn->query('SELECT COUNT(*) as tong FROM xe');
+            $xe = $stm->fetch(PDO::FETCH_ASSOC);
         ?>
     </div>
-
-
+    
     <div class="content">
         <div class="solieu">
             <div class="row">
                 <div class="col-3 box1">QUẢN LÝ <br>
-                    <span> <i class="fas fa-user"></i></span><br>
-                    <a href="/admin/account" class="view_all">View all</a>
+                    <span> <?= $ad['tong']; ?> <i class="fas fa-user"></i></span><br>
+                    <a href="account.php" class="view_all">View all</a>
                 </div>
                 <div class="col-3 box2">LOẠI SẢN PHẨM <br>
-                    <span>5 <i class="fas fa-file-invoice"></i></span><br>
-                    <a href="/admin/productType" class="view_all">View all</a>
+                    <span> <?= $loai['tong']; ?> <i class="fas fa-file-invoice"></i></span><br>
+                    <a href="viewType_ad.php" class="view_all">View all</a>
                 </div>
                 <div class="col-3 box3">SẢN PHẨM <br>
-                    <span>10 <i class="fas fa-cocktail"></i></span><br>
-                    <a href="/admin/productInfor" class="view_all">View all</a>
+                    <span> <?= $xe['tong']; ?> <i class="fas fa-cocktail"></i></span><br>
+                    <a href="viewPro_ad.php" class="view_all">View all</a>
                 </div>
             </div> 
         </div>
         
+        <?php
+        $sqlLoai = "select * from loai";
+        $stmt=$conn->prepare($sqlLoai);
+        $stmt->execute();
+        ?>
 
         <div class="row table_content">
             <div class="col-md-12 col-sm-6 mt-1">
                 <div class="card">
                     <div class="card-header">
-                        THỐNG KÊ CÁC LOẠI THỨC UỐNG
+                        THỐNG KÊ CÁC LOẠI XE
                     </div>
                     <div class="card-body">              
                         <table class="table table-responsive type" id="newStudent"> 
@@ -193,17 +203,17 @@
                                 <tr>
                                     <th scope="col" class="title">Tên</th>
                                     <th scope="col" class="title">Mã</th>
-                                    <th scope="col" class="title">Số Lượng Món</th>
                                 </tr>
                             </thead>
                             <body>
-                                <% Types.forEach(function(element){ %>
+                            <?php
+                                while($data = $stmt->fetch(PDO::FETCH_ASSOC)){
+                            ?>
                                 <tr>
-                                    <td scope="col" class="type_body"><%= element.nameType %></td>
-                                    <td scope="col" class="type_body">CF</td>
-                                    <td scope="col" class="type_body">8</td>
+                                    <td scope="col" class="type_body"><?= $data['maloai'] ?></td>
+                                    <td scope="col" class="type_body"><?= $data['tenloai'] ?></td>
                                 </tr>
-                                <% }); %>
+                            <?php } ?>
                             </body>
                         </table> 
                     </div>
@@ -211,31 +221,39 @@
             </div>
         </div>
 
+        <?php
+        $sqlXe = "select * from xe";
+        $stmt=$conn->prepare($sqlXe);
+        $stmt->execute();
+        ?>
+
         <div class="row table_content">
             <div class="col-md-12 col-sm-6 mt-1">
                 <div class="card">
                     <div class="card-header">
-                        THỐNG KÊ CÁC THỨC UỐNG
+                        THỐNG KÊ CÁC XE
                     </div>
                     <div class="card-body">              
                         <table class="table table-responsive" id="newStudent"> 
                             <thead>
                                 <tr>
-                                    <th scope="col" class="title">Loại</th>
-                                    <th scope="col" class="title">Tên</th>
+                                    <th scope="col" class="title">Mã xe</th>
+                                    <th scope="col" class="title">Tên xe</th>
                                     <th scope="col" class="title">Giá</th>
+                                    <th scope="col" class="title">Mã loại</th>
                                 </tr>
                             </thead>
                             <body>
-                                <% Products.forEach(function(loai){ %>
-                                    <% loai.products.forEach(function(sp){ %>
+                            <?php
+                                while($data = $stmt->fetch(PDO::FETCH_ASSOC)){
+                            ?>
                                 <tr>
-                                    <td scope="col" class="type_body"><%= loai.nameType %></td>
-                                    <td scope="col" class="type_body"><%= sp.nameProduct %></td>
-                                    <td scope="col" class="type_body"><%= sp.price %></td>
+                                    <td scope="col" class="type_body"><?= $data['maxe'] ?></td>
+                                    <td scope="col" class="type_body"><?= $data['tenxe'] ?></td>
+                                    <td scope="col" class="type_body"><?= number_format($data['gia']) ?></td>
+                                    <td scope="col" class="type_body"><?= $data['maloai'] ?></td>
                                 </tr>
-                                    <% }); %>
-                                <% }); %>
+                            <?php } ?>
                             </body>
                         </table> 
                     </div>
