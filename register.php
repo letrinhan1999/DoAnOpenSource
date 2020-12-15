@@ -57,7 +57,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<input type="password" name="password" value="">
 
 						<span> Họ và tên <label>*</label></span>
-						<input type="text" name="txtTen" value="<?=isset($_POST['txtTen1'])?$_POST['txtTen']:''; ?>">
+						<input type="text" name="txtTen" value="<?=isset($_POST['txtTen'])?$_POST['txtTen']:''; ?>">
 					</div>
 					<div class="clearfix"> </div>
 

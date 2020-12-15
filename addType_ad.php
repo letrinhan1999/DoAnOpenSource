@@ -187,7 +187,7 @@ if(isset($_POST['submitAddType'])){
         echo "Phải Post dữ liệu";
         die;
     }
-    /* $maloai = isset($_POST['txtMaloai'])?$_POST['txtMaloai']:''; */
+    $maloai = isset($_POST['txtMaloai'])?$_POST['txtMaloai']:'';
     $tenloai = isset($_POST['txtName'])?$_POST['txtName']:'';
     $data = [
         $maloai,
