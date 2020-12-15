@@ -25,6 +25,7 @@
     <div class="dropdown-container">
         <a href="addType_admin.php"> Quản lí loại </a>
         <a href="addPro_admin.php"> Quản lí thông tin sản phẩm</a>
+        <a href="account.php"> Quản lí thông tin tài khoản</a>
     </div>
     <button class="dropdown-btn">
         <i class="fas fa-th"></i>
