@@ -1,6 +1,6 @@
 <!-- TRANG THÊM LOẠI SẢN PHẨM VÀ0 DB ADMIN -->
 <?php
-    include('./includes/head.php');
+    include('./includes/admin/head.php');
     include('./includes/connect.php');
     session_start();
     $sql="select * from loai";
