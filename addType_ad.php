@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- TRANG THÊM SẢN PHẨM VÀ0 DB ADMIN -->
 
 <?php
@@ -208,3 +209,6 @@ if(isset($_POST['submitAddType'])){
 }
 
 ?>
+=======
+<!-- TRANG THÊM SẢN PHẨM VÀ0 DB ADMIN -->
+>>>>>>> parent of 1e91508... view login logut, addproduct, add admin

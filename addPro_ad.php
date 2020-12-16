@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- TRANG THÊM LOẠI SẢN PHẨM VÀ0 DB ADMIN -->
 <?php
     include('./includes/admin/head.php');
@@ -166,3 +167,6 @@
    
 </body>
 </html>
+=======
+<!-- TRANG THÊM LOẠI SẢN PHẨM VÀ0 DB ADMIN -->
+>>>>>>> parent of 1e91508... view login logut, addproduct, add admin

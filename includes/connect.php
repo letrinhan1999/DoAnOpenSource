@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <?php
 $servername = "localhost";
@@ -24,3 +25,8 @@ try {
 ?>
 =======
 >>>>>>> parent of f5c06c6... update source hoàn chỉnh (10-12-2020)
+=======
+<!-- CONNECT -->
+
+<?php
+>>>>>>> parent of 1e91508... view login logut, addproduct, add admin

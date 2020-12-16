@@ -65,6 +65,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<input type="submit" name="submitDKy" value="Đăng Ký">
 			</form>
 			<div class="clearfix"> </div>
+<<<<<<< HEAD
+=======
+			<div class="register-but">
+				<form>
+					<input type="submit" value="submit">
+					<div class="clearfix"> </div>
+				</form>
+			</div>
+>>>>>>> parent of 1e91508... view login logut, addproduct, add admin
 		</div>
 
 
