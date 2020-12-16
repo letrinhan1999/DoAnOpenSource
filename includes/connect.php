@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 $servername = "localhost";
 $username = "root";
@@ -20,3 +21,8 @@ try {
   echo "<div hidden>Connection failed: ". $e->getMessage().'</div>' ;
 }
 ?>
+=======
+<!-- CONNECT -->
+
+<?php
+>>>>>>> parent of 937fe42... update nhiệm vụ

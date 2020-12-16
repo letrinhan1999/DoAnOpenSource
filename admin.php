@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- TRANG VIEW ADMIN -->
 <?php
     include('./includes/admin/head.php');
@@ -253,3 +254,6 @@
    
 </body>
 </html>
+=======
+<!-- TRANG VIEW ADMIN -->
+>>>>>>> parent of 937fe42... update nhiệm vụ
