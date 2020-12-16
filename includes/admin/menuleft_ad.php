@@ -32,9 +32,9 @@
         <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-container">
-        <a href="viewType_ad.php"> Xem loại </a>
-        <a href="viewPro_ad.php"> Xem thông tin sản phấm</a>
-        <a href="viewOrder_ad.php"> Xem hoa don</a>
+        <a href="viewType_admin.php"> Xem loại </a>
+        <a href="viewPro_admin.php"> Xem thông tin sản phấm</a>
+        <a href="viewOrder_admin.php"> Xem hoa don</a>
     </div>
 </div>
 <a href="#"><i class="fas fa-info-circle"></i><span> Thông tin</span></a>
