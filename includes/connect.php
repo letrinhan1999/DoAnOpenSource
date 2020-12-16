@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <?php
 $servername = "localhost";
@@ -16,3 +17,8 @@ try {
   echo "<div hidden>Connection failed: ". $e->getMessage().'</div>' ;
 }
 ?>
+=======
+<!-- CONNECT -->
+
+<?php
+>>>>>>> parent of 2c4500f... up Order & Account
