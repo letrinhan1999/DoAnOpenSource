@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <?php
 $servername = "localhost";
@@ -21,3 +22,5 @@ try {
   echo "<div hidden>Connection failed: ". $e->getMessage().'</div>' ;
 }
 ?>
+=======
+>>>>>>> parent of f5c06c6... update source hoàn chỉnh (10-12-2020)
