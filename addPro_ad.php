@@ -1,12 +1,16 @@
 <!-- TRANG THÊM LOẠI SẢN PHẨM VÀ0 DB ADMIN -->
 <?php
-    include('./includes/head.php');
+    include('./includes/admin/head.php');
     include('./includes/connect.php');
     session_start();
-    $sql="select * from loai";
+    if(!isset($_SESSION['username'])){
+        echo '<script type="text/javascript">
+            window.location = "loginAdmin.php" </script>';
+    }
+    /* $sql="select * from loai";
     $stmt=$conn->prepare($sql);
     $stmt->execute();
-    $loai = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $loai = $stmt->fetchAll(PDO::FETCH_ASSOC); */
 ?>
 <!DOCTYPE html>
 <html>
